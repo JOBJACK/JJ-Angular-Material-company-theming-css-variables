@@ -1,8 +1,8 @@
 {
+  "name": "angular",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://jobjack.github.io/",
-  "name": "JJ-Angular-Material-company-theming-css-variables",
+  "homepage": "https://jobjack.github.io/JJ-Angular-Material-company-theming-css-variables",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
