@@ -29,7 +29,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: NPM install
-        run: npm install --legacy-peer-deps
+        run: npm install
       - name: Install Angular Cli
         run: npm install -g @angular/cli
       - name: Build
