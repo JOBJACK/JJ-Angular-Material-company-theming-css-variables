@@ -37,45 +37,45 @@ $dynamic-theme-primary: (
   )
 );
 
-$dynamic-theme-secondary: (
-  50 : var(--theme-secondary-50),
-  100 : var(--theme-secondary-100),
-  200 : var(--theme-secondary-200),
-  300 : var(--theme-secondary-300),
-  400 : var(--theme-secondary-400),
-  500 : var(--theme-secondary-500),
-  600 : var(--theme-secondary-600),
-  700 : var(--theme-secondary-700),
-  800 : var(--theme-secondary-800),
-  900 : var(--theme-secondary-900),
-  A100 : var(--theme-secondary-A100),
-  A200 : var(--theme-secondary-A200),
-  A400 : var(--theme-secondary-A400),
-  A700 : var(--theme-secondary-A700),
+$dynamic-theme-accent: (
+  50 : var(--theme-accent-50),
+  100 : var(--theme-accent-100),
+  200 : var(--theme-accent-200),
+  300 : var(--theme-accent-300),
+  400 : var(--theme-accent-400),
+  500 : var(--theme-accent-500),
+  600 : var(--theme-accent-600),
+  700 : var(--theme-accent-700),
+  800 : var(--theme-accent-800),
+  900 : var(--theme-accent-900),
+  A100 : var(--theme-accent-A100),
+  A200 : var(--theme-accent-A200),
+  A400 : var(--theme-accent-A400),
+  A700 : var(--theme-accent-A700),
   contrast: (
-    50: var(--theme-secondary-contrast-50),
-    100: var(--theme-secondary-contrast-100),
-    200: var(--theme-secondary-contrast-200),
-    300: var(--theme-secondary-contrast-300),
-    400: var(--theme-secondary-contrast-400),
-    500: var(--theme-secondary-contrast-500),
-    600: var(--theme-secondary-contrast-600),
-    700: var(--theme-secondary-contrast-700),
-    800: var(--theme-secondary-contrast-800),
-    900: var(--theme-secondary-contrast-900),
-    A100: var(--theme-secondary-contrast-A100),
-    A200: var(--theme-secondary-contrast-A200),
-    A400: var(--theme-secondary-contrast-A400),
-    A700: var(--theme-secondary-contrast-A700),
+    50: var(--theme-accent-contrast-50),
+    100: var(--theme-accent-contrast-100),
+    200: var(--theme-accent-contrast-200),
+    300: var(--theme-accent-contrast-300),
+    400: var(--theme-accent-contrast-400),
+    500: var(--theme-accent-contrast-500),
+    600: var(--theme-accent-contrast-600),
+    700: var(--theme-accent-contrast-700),
+    800: var(--theme-accent-contrast-800),
+    900: var(--theme-accent-contrast-900),
+    A100: var(--theme-accent-contrast-A100),
+    A200: var(--theme-accent-contrast-A200),
+    A400: var(--theme-accent-contrast-A400),
+    A700: var(--theme-accent-contrast-A700),
   )
 );
 
 $my-primary: mat.define-palette($dynamic-theme-primary, 700, 200, 900);
-$my-accent: mat.define-palette($dynamic-theme-secondary, 700, 200, 900);
+$my-accent: mat.define-palette($dynamic-theme-accent, 700, 200, 900);
 $my-warn: mat.define-palette(mat.$red-palette);
 
 //$my-warn: mat.define-palette($jj-red, 700, 200, 900);
 
-// $app-theme: mat-light-theme(mat-palette($dynamic-theme-primary), mat-palette($dynamic-theme-secondary), mat-palette($mat-red));
+// $app-theme: mat-light-theme(mat-palette($dynamic-theme-primary), mat-palette($dynamic-theme-accent), mat-palette($mat-red));
 
 // @include angular-material-theme($app-theme);

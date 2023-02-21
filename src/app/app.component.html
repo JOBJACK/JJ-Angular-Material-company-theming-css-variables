@@ -1,66 +1,34 @@
-<mat-form-field>
-  <input matInput type="text" [(ngModel)]="primaryColor" />
-</mat-form-field>
-<button mat-raised-button color="primary" (click)="savePrimaryColor()">
-  Save Primary Color
-</button>
-<!-- <mat-spinner [diameter]="40"></mat-spinner> -->
+<div class="m-3" [formGroup]="myForm">
+  <h3>Choose Primary and Accent theme colours</h3>
+  <div class="float-end m-3">
+    <a
+      target="_blank"
+      matTooltip="Edit on Stackblitz"
+      matTooltipPosition="above"
+      href="https://stackblitz.com/edit/jj-buttons"
+      ><mat-icon svgIcon="electric_bolt">electric_bolt</mat-icon></a
+    >
+  </div>
+  <mat-form-field>
+    <mat-label>Select Primary Colour</mat-label>
+    <input matInput [ngxMatColorPicker]="pickerPrimary" formControlName="colorCtrPrimary" [disabled]="disabled">
+    <ngx-mat-color-toggle matSuffix [for]="pickerPrimary"></ngx-mat-color-toggle>
+    <ngx-mat-color-picker #pickerPrimary [touchUi]="touchUi" [color]="colorPrimary"></ngx-mat-color-picker>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Select Accent Colour</mat-label>
+    <input matInput [ngxMatColorPicker]="pickerAccent" formControlName="colorCtrAccent" [disabled]="disabled">
+    <ngx-mat-color-toggle matSuffix [for]="pickerAccent"></ngx-mat-color-toggle>
+    <ngx-mat-color-picker #pickerAccent [touchUi]="touchUi" [color]="colorAccent"></ngx-mat-color-picker>
+  </mat-form-field>
+</div>
 
-<p>Primary Color Palette</p>
-<!-- <div
-  *ngFor="let color of primaryColorPalette"
-  [style.background-color]="color.hex"
-  [style.color]="color.darkContrast ? 'black' : 'white'"
->
-  {{ color.name }}
-</div> -->
-
-<hr />
-
-<mat-form-field>
-  <input matInput type="text" [(ngModel)]="accentColor" />
-</mat-form-field>
-<button mat-raised-button color="accent" (click)="saveAccentColor()">
-  Save Accent Color
-</button>
-<!-- <mat-spinner color="accent" [diameter]="40"></mat-spinner> -->
-
-<p>Accent Color Palette</p>
-<!-- <div
-  *ngFor="let color of accentColorPalette"
-  [style.background-color]="color.hex"
-  [style.color]="color.darkContrast ? 'black' : 'white'"
->
-  {{ color.name }}
-</div> -->
-
-<hr>
-<mat-form-field>
-  <input matInput [ngxMatColorPicker]="picker" [formControl]="colorCtrPrimary" [disabled]="disabled">
-  <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
-  <ngx-mat-color-picker #picker [touchUi]="touchUi" [color]="colorPrimary"></ngx-mat-color-picker>
-</mat-form-field>
-<br>
-<mat-form-field>
-  <input matInput [ngxMatColorPicker]="picker" [formControl]="colorCtrAccent" [disabled]="disabled">
-  <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
-  <ngx-mat-color-picker #picker [touchUi]="touchUi" [color]="colorAccent"></ngx-mat-color-picker>
-</mat-form-field>
-<hr>
 <div class="container mt-5">
   <section class="my-3">
     <div class="row text-center m-2 justify-content-center">
       <div class="col">
         <h4>Buttons</h4>
-      </div>
-      <div class="col offset-md-6">
-        <a
-          target="_blank"
-          matTooltip="Edit on Stackblitz"
-          matTooltipPosition="above"
-          href="https://stackblitz.com/edit/jj-buttons"
-          ><mat-icon svgIcon="electric_bolt">electric_bolt</mat-icon></a
-        >
       </div>
     </div>
     <mat-divider></mat-divider>

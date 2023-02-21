@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 import { IconService } from './icon.service';
 import tinycolor from 'tinycolor2';
 import { ThemePalette } from '@angular/material/core';
-import { AbstractControl, FormControl } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+} from '@angular/forms';
+import { tap } from 'rxjs/operators';
 
 //declare const tinycolor: any;
 
@@ -18,20 +22,12 @@ export interface Color {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private iconService: IconService) {
-    this.savePrimaryColor();
-    this.saveAccentColor();
-  }
-
   //////////// Colour picker ////////////
   public disabled = false;
   public colorPrimary: ThemePalette = 'primary';
   public colorAccent: ThemePalette = 'accent';
   public touchUi = false;
-
-  //colorCtr: AbstractControl = new FormControl(null);
-  colorCtrPrimary = new FormControl(null);
-  colorCtrAccent = new FormControl(null);
+  myForm: FormGroup;
 
   public options = [
     { value: true, label: 'True' },
@@ -46,6 +42,29 @@ export class AppComponent {
   primaryColorPalette: Color[] = [];
   accentColor = '#0000aa';
   accentColorPalette: Color[] = [];
+
+  constructor(private iconService: IconService, fb: FormBuilder) {
+    this.savePrimaryColor();
+    this.saveAccentColor();
+    this.myForm = fb.group({
+      colorCtrPrimary: null,
+      colorCtrAccent: null,
+    });
+    this.onFormChanges();
+  }
+
+  onFormChanges() {
+    this.myForm.valueChanges.pipe(tap((val) => {
+      if (val.colorCtrPrimary) {
+        this.primaryColor = `#${val.colorCtrPrimary.hex}`
+        this.savePrimaryColor()
+      }
+      if (val.colorCtrAccent) {
+        this.accentColor = `#${val.colorCtrAccent.hex}`
+        this.saveAccentColor()
+      }
+    })).subscribe()
+  }
 
   savePrimaryColor() {
     this.primaryColorPalette = computeColors(this.primaryColor);
