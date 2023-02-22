@@ -35,9 +35,9 @@ export class AppComponent {
 
   ////////////////
 
-  primaryColor = '#1cb1c9';
+  primaryColor = '#1c9fda';
   primaryColorPalette: Color[] = [];
-  accentColor = '#007cff';
+  accentColor = '#f6fa06';
   accentColorPalette: Color[] = [];
 
   constructor(private iconService: IconService, fb: FormBuilder) {

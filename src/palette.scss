@@ -70,8 +70,8 @@ $dynamic-theme-accent: (
   )
 );
 
-$my-primary: mat.define-palette($dynamic-theme-primary, 700, 200, 900);
-$my-accent: mat.define-palette($dynamic-theme-accent, 700, 200, 900);
+$my-primary: mat.define-palette($dynamic-theme-primary, 500);
+$my-accent: mat.define-palette($dynamic-theme-accent, 500);
 $my-warn: mat.define-palette(mat.$red-palette);
 
 //$my-warn: mat.define-palette($jj-red, 700, 200, 900);
