@@ -5,22 +5,43 @@
       target="_blank"
       matTooltip="Edit on Stackblitz"
       matTooltipPosition="above"
-      href="https://stackblitz.com/edit/jj-buttons"
+      href="https://stackblitz.com/edit/jj-company-theming-css-variables"
       ><mat-icon svgIcon="electric_bolt">electric_bolt</mat-icon></a
     >
   </div>
   <mat-form-field>
     <mat-label>Select Primary Colour</mat-label>
-    <input matInput [ngxMatColorPicker]="pickerPrimary" formControlName="colorCtrPrimary" [disabled]="disabled">
-    <ngx-mat-color-toggle matSuffix [for]="pickerPrimary"></ngx-mat-color-toggle>
-    <ngx-mat-color-picker #pickerPrimary [touchUi]="touchUi" [color]="colorPrimary"></ngx-mat-color-picker>
+    <input
+      matInput
+      [ngxMatColorPicker]="pickerPrimary"
+      formControlName="colorCtrPrimary"
+      [disabled]="disabled"
+    />
+    <ngx-mat-color-toggle
+      matSuffix
+      [for]="pickerPrimary"
+    ></ngx-mat-color-toggle>
+    <ngx-mat-color-picker
+      #pickerPrimary
+      [touchUi]="touchUi"
+      [color]="colorPrimary"
+    ></ngx-mat-color-picker>
   </mat-form-field>
-  <br>
+  <br />
   <mat-form-field>
     <mat-label>Select Accent Colour</mat-label>
-    <input matInput [ngxMatColorPicker]="pickerAccent" formControlName="colorCtrAccent" [disabled]="disabled">
+    <input
+      matInput
+      [ngxMatColorPicker]="pickerAccent"
+      formControlName="colorCtrAccent"
+      [disabled]="disabled"
+    />
     <ngx-mat-color-toggle matSuffix [for]="pickerAccent"></ngx-mat-color-toggle>
-    <ngx-mat-color-picker #pickerAccent [touchUi]="touchUi" [color]="colorAccent"></ngx-mat-color-picker>
+    <ngx-mat-color-picker
+      #pickerAccent
+      [touchUi]="touchUi"
+      [color]="colorAccent"
+    ></ngx-mat-color-picker>
   </mat-form-field>
 </div>
 
